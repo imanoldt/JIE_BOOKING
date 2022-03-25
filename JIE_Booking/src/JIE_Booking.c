@@ -1,17 +1,21 @@
 /*
  ============================================================================
- Name        : JIE_Booking.c
- Author      : 
- Version     :
- Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
+ Nombre      : JIE_Booking.c
+ Autor       : Imanol Duran, Enrique Puente, Jaime Revilla
+ Version     : 1
+ Descripcion : Main de la aplicacion
  ============================================================================
  */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> /*INPUT_OUTPUT*/
+#include <stdlib.h> /*GESTION_MEM_DINMC*/
+#include "menu.h"
 
-int main(void) {
-	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
-	return EXIT_SUCCESS;
+
+
+int main() {
+	prMenu_1();
+
+
 }
+

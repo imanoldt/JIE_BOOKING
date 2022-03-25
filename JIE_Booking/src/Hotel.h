@@ -18,4 +18,6 @@ typedef struct{
 
 
 
+
+
 #endif /* HOTEL_H_ */
