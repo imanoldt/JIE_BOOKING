@@ -10,9 +10,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include "Hotel.h"
+#include "log.h"
 
 
-void imprimirHotelesCSV(FILE *pf){
+void imprimirHotelesCSV(/*FILE *pf*/){ // Devuelve la lista de Hoteles leida desde el dantaset .CSV
+	FILE *pf;
 	char *cadena;
 	char *cod;
 	char *dir;
@@ -20,8 +22,12 @@ void imprimirHotelesCSV(FILE *pf){
 	char *nom;
 	int num;
 
-	pf=fopen(pf,"r");
+	pf=fopen("HotelesN.csv","r");
 	if(pf!=(FILE*)NULL){
+
+		loggerN("[INFO]", "FICHERO ABIERTO");
+
+
 		fgets(cadena,200,pf);
 		while(fgets(cadena,200,pf)!=NULL){
 			cod = strtok(cadena,";");

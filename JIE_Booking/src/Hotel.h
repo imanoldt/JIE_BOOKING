@@ -17,7 +17,7 @@ typedef struct{
 	char dirH[100];
 }tHotel;
 
-void imprimirHotelesCSV(FILE *pf);
+void imprimirHotelesCSV(/*FILE *pf*/);
 
 
 #endif /* HOTEL_H_ */

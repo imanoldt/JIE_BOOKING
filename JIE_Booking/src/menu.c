@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include "menu.h"
 #include "Hotel.h"
+//#include "log.h"
+
 
 #define AMARILLO_COLOR "\x1b[33m"
 #define CYAN_COLOR   "\x1b[36m"
@@ -85,6 +87,9 @@ do {
 				printf("≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠\n");
 				printf("          HOTELES DISPONIBLES\n");
 				printf("≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠\n");
+
+				//logggerN("[INFO", "ABRIENDO FICHERO");
+
 
 				imprimirHotelesCSV("HotelesN.csv");
 				break;
