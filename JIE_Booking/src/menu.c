@@ -7,12 +7,16 @@
 
 #include <math.h> /*FUN_MATEMATICAS*/
 #include <stdio.h>
+#include "menu.h"
+#include "Hotel.h"
+//#include "log.h"
+
 
 #define AMARILLO_COLOR "\x1b[33m"
 #define CYAN_COLOR   "\x1b[36m"
 #define COLOR_RESET  "\x1b[0m"
 
-int prMenu_3() {
+int prMenu_3() { // @suppress("No return")
 	int jOpcion;
 
 	do {
@@ -51,7 +55,57 @@ int prMenu_3() {
 
 	} while (jOpcion != 3);
 }
+void prMenu_2(){
+int jOpcion;
 
+do {
+	printf("\n   1. Hoteles Disponibles");
+	fflush(stdin);
+	fflush(stdout);
+	printf("\n   2. Check In/Out");
+	fflush(stdin);
+	fflush(stdout);
+	printf("\n   3. Parking");
+	fflush(stdin);
+	fflush(stdout);
+	printf("\n   4.Atras ");
+	fflush(stdin);
+	fflush(stdout);
+
+	printf("\n\n   Introduzca una opcion (1-4): ");
+	fflush(stdin);
+	fflush(stdout);
+
+	scanf("%d", &jOpcion); /* Recoge la informacion marcada por el usuario*/
+
+			/* switch para hacer la funcion requerida por el usuario*/
+
+			switch (jOpcion) {
+			case 1:
+				/*IMPORTAR EL .CSV HOTELESN QUE ESTA EN LA CARPETA DEL DRIVE  Y MOSTRARLO COMO UNA LISTA DONDE SE PUEDE SELECCIONAR EL HOTEL*/
+				/*Llamar a la funcion de ¿que desea hacer?*/
+				printf("≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠\n");
+				printf("          HOTELES DISPONIBLES\n");
+				printf("≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠\n");
+
+				//logggerN("[INFO", "ABRIENDO FICHERO");
+
+
+				imprimirHotelesCSV("HotelesN.csv");
+				break;
+
+			case 2:
+				printf("");
+				break;
+
+			case 3:
+				prMenu_1();
+				break;
+
+			}
+
+} while (jOpcion != 3);
+}
 int prMenu_1() {
 
 	int iOpcion;
@@ -60,7 +114,7 @@ int prMenu_1() {
 
 		printf(
 				AMARILLO_COLOR "\n============================================================================" COLOR_RESET "\n");
-		printf(CYAN_COLOR "\nBienvenido a JIE_BOOKING" COLOR_RESET "\n");
+		printf(CYAN_COLOR "\n                      Bienvenido a JIE_BOOKING" COLOR_RESET "\n");
 
 		fflush(stdin);
 		fflush(stdout);

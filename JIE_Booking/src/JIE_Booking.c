@@ -14,7 +14,7 @@
 
 
 int main() {
-	prMenu_1();
+	prMenu_2();
 
 
 }
