@@ -26,7 +26,7 @@ void pedirCliente (tCliente * cl){
 		printf("A�o nacimiento: ");
 		fflush(stdout);
 		fflush(stdin);
-		scanf("%d", &cl->anoDeNac);
+		scanf("%d", &cl->anoDeNacimiento);
 		printf("contrasena: ");
 		fflush(stdout);
 		fflush(stdin);
