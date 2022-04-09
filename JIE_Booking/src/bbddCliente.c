@@ -1,11 +1,11 @@
-#include "bbddCliente.h"
 #include <stdio.h>
 #include <string.h>
+#include "bbddCliente.h"
 
 void crearTablas(sqlite3 *db){
 	sqlite3_stmt *stmt;
 
-	char sql[] = "Create table cliente(nombre varchar2(20), DNI int, eMail varchar2(25), anoDeNacimiento int, contrasena varchar2(8))";
+	char sql[] = "Create table cliente(nombre varchar2(20), DNI varchar2(10), eMail varchar2(25), anoDeNacimiento int, contrasena varchar2(8))";
 
 	sqlite3_prepare_v2(db,sql,-1,&stmt,NULL);
 
@@ -15,17 +15,36 @@ void crearTablas(sqlite3 *db){
 
 }
 //Añadimos todos los datos del cliente
-void insertarCliente(sqlite3 *db, int dni, char *nombre, char *eMail, int anoDeNacimiento, char *contrasena){
+//void insertarCliente(sqlite3 *db, int dni, char *nombre, char *eMail, int anoDeNacimiento, char *contrasena){
+//	sqlite3_stmt *stmt;
+//
+//	char sql[100];
+//
+//	sprintf(sql, "insert into cliente values(%d, %s, %s, %d, %s)",dni,nombre,eMail,anoDeNacimiento,contrasena);
+//	sqlite3_prepare_v2(db, sql, -1, &stmt, NULL) ;
+//	sqlite3_step(stmt);
+//	sqlite3_finalize(stmt);
+//
+//}
+
+
+void insertarPersona(sqlite3 *db, char *dni , char *nombre, char *eMail, int anoDeNacimiento, char *contrasena){
 	sqlite3_stmt *stmt;
 
 	char sql[100];
 
-	sprintf(sql, "insert into cliente values(%d, %s, %s, %d, %s)", dni, nombre, eMail, anoDeNacimiento, contrasena);
+	sprintf(sql, "insert into persona values(%s, %s, %s, %d, %s)",dni,nombre,eMail,anoDeNacimiento,contrasena);
 	sqlite3_prepare_v2(db, sql, -1, &stmt, NULL) ;
 	sqlite3_step(stmt);
 	sqlite3_finalize(stmt);
-
 }
+
+
+
+
+
+
+
 
 //Eliminamos el cliente por su dni
 void borrarCliente(sqlite3 *db, int dni){
@@ -49,8 +68,8 @@ void mostrarCliente(sqlite3 *db){
 
 	do{
 		resul = sqlite3_step(stmt);
-		id = sqlite3_column_int(stmt, 0);
-		strcpy(nom, (char*)sqlite3_column_text(stmt, 1));
+		dni = sqlite3_column_int(stmt, 0);
+		strcpy(nombre, (char*)sqlite3_column_text(stmt, 1));
 		/*strcpy(cad, (char*)sqlite3_column_text(stmt, 2));
 		letra = cad[0];*/
 		printf("%d %s\n",dni,nombre);
@@ -58,9 +77,9 @@ void mostrarCliente(sqlite3 *db){
 
 	/*resul = sqlite3_step(stmt);
 	 * 	while(resul == SQLITE_ROW){
-		id = sqlite3_column_int(stmt, 0);
-		strcpy(nom, (char*)sqlite3_column_text(stmt, 1));
-		printf("%d %s\n",id,nom);
+		dni = sqlite3_column_int(stmt, 0);
+		strcpy(nombre, (char*)sqlite3_column_text(stmt, 1));
+		printf("%d %s\n",dni,nombre);
 		resul = sqlite3_step(stmt);
 	}*/
 	sqlite3_finalize(stmt);

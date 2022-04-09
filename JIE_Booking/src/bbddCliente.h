@@ -5,7 +5,7 @@
 #include "sqlite3.h"
 
 void crearTablas(sqlite3 *db);
-void insertarCliente(sqlite3 *db, int dni, char *nombre, char *eMail, int anoDeNacimiento, char *contraseña);
+void insertarPersona(sqlite3 *db, char *dni, char *nombre, char *eMail, int anoDeNacimiento, char *contraseña);
 void borrarCliente(sqlite3 *db, int dni);
 void mostrarCliente(sqlite3 *db);
 void modificarNombreCliente(sqlite3 *db,int dni, char *nombre);

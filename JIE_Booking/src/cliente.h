@@ -10,7 +10,7 @@
 
 typedef struct{
 	char nombre [20];
-	int dni;
+	char dni[10];
 	char eMail [25];
 	int anoDeNacimiento;
 	char contrasena[20];
