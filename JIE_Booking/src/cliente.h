@@ -9,12 +9,15 @@
 #define CLIENTE_H_
 
 typedef struct{
-	char nombre[20];
-	int edad;
-	char dni[10];
-}CLiente;
+	char nombreUsu [20];
+	int dni;
+	char email [25];
+	int anoDeNacimiento;
+	char contrasena[20];
 
+} tCliente;
 
-
+void pedirCliente (tCliente * cl);
+void imprimirCliente (tCliente cl);
 
 #endif /* CLIENTE_H_ */
