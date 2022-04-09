@@ -9,9 +9,9 @@
 #define CLIENTE_H_
 
 typedef struct{
-	char nombreUsu [20];
+	char nombre [20];
 	int dni;
-	char email [25];
+	char eMail [25];
 	int anoDeNacimiento;
 	char contrasena[20];
 

@@ -18,15 +18,15 @@ void pedirCliente (tCliente * cl){
 		printf("DNI: ");
 		fflush(stdout);
 		fflush(stdin);
-		scanf("%d",&cl->DNI);
+		scanf("%d",&cl->dni);
 		printf("Email: ");
 		fflush(stdout);
 		fflush(stdin);
-		gets(cl->email);
-		printf("Año nacimiento: ");
+		gets(cl->eMail);
+		printf("Aï¿½o nacimiento: ");
 		fflush(stdout);
 		fflush(stdin);
-		scanf("%d", &cl->AnoNac);
+		scanf("%d", &cl->anoDeNac);
 		printf("contrasena: ");
 		fflush(stdout);
 		fflush(stdin);
@@ -34,5 +34,5 @@ void pedirCliente (tCliente * cl){
 }
 
 void imprimirCliente(tCliente cl){
-	printf("%s %d %s %d %s\n", cl.nombreUsu, cl.DNI, cl.email, cl.AnoNac, cl.contrasena);
+	printf("%s %d %s %d %s\n", cl.nombre, cl.dni, cl.eMail, cl.anoDeNac, cl.contrasena);
 }
