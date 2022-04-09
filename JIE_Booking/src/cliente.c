@@ -34,5 +34,5 @@ void pedirCliente (tCliente * cl){
 }
 
 void imprimirCliente(tCliente cl){
-	printf("%s %d %s %d %s\n", cl.nombre, cl.dni, cl.eMail, cl.anoDeNac, cl.contrasena);
+	printf("%s %d %s %d %s\n", cl.nombre, cl.dni, cl.eMail, cl.anoDeNacimiento, cl.contrasena);
 }
