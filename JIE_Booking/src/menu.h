@@ -11,6 +11,6 @@
 
 int prMenu_3();
 int prMenu_1();
-void prMenu_2();
+int prMenu_2();
 
 #endif /* MENU_H_ */

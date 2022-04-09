@@ -9,28 +9,53 @@
 #include "cliente.h"
 #include <stdio.h>
 
-void pedirCliente (tCliente * cl){
+//void pedirCliente (tCliente * cl){
+//
+//		printf("Nombre de usuario: ");
+//		fflush(stdout);
+//		fflush(stdin);
+//		gets(cl->nombre);
+//		printf("DNI: ");
+//		fflush(stdout);
+//		fflush(stdin);
+//		scanf("%d",&cl->dni);
+//		printf("Email: ");
+//		fflush(stdout);
+//		fflush(stdin);
+//		gets(cl->eMail);
+//		printf("A�o nacimiento: ");
+//		fflush(stdout);
+//		fflush(stdin);
+//		scanf("%d", &cl->anoDeNacimiento);
+//		printf("contrasena: ");
+//		fflush(stdout);
+//		fflush(stdin);
+//		gets(cl->contrasena);
+//}
 
+tCliente pedirCliente(){
+	tCliente cl;
 		printf("Nombre de usuario: ");
 		fflush(stdout);
 		fflush(stdin);
-		gets(cl->nombre);
+		gets(cl.nombre);
 		printf("DNI: ");
 		fflush(stdout);
 		fflush(stdin);
-		scanf("%d",&cl->dni);
+		gets(cl.dni);
 		printf("Email: ");
 		fflush(stdout);
 		fflush(stdin);
-		gets(cl->eMail);
-		printf("A�o nacimiento: ");
+		gets(cl.eMail);
+		printf("Año nacimiento: ");
 		fflush(stdout);
 		fflush(stdin);
-		scanf("%d", &cl->anoDeNacimiento);
+		scanf("%d", cl.anoDeNacimiento);
 		printf("contrasena: ");
 		fflush(stdout);
 		fflush(stdin);
-		gets(cl->contrasena);
+		gets(cl.contrasena);
+		return cl;
 }
 
 void imprimirCliente(tCliente cl){

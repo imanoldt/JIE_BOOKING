@@ -17,9 +17,8 @@
 #define COLOR_RESET  "\x1b[0m"
 
 int prMenu_3() { // @suppress("No return")
-	int jOpcion;
+	int hOpcion;
 
-	do {
 		printf("\n   1. Hotel.");
 		fflush(stdin);
 		fflush(stdout);
@@ -34,31 +33,34 @@ int prMenu_3() { // @suppress("No return")
 		fflush(stdin);
 		fflush(stdout);
 
-		scanf("%d", &jOpcion); /* Recoge la informacion marcada por el usuario*/
+		scanf("%d", &hOpcion); /* Recoge la informacion marcada por el usuario*/
+
+		return hOpcion;
 
 				/* switch para hacer la funcion requerida por el usuario*/
 
-				switch (jOpcion) {
-				case 1:
-					printf("");
-					break;
-
-				case 2:
-					printf("");
-					break;
-
-				case 3:
-					prMenu_1();
-					break;
-
-				}
-
-	} while (jOpcion != 3);
+//				switch (jOpcion) {
+//				case 1:
+//					printf("");
+//					break;
+//
+//				case 2:
+//					printf("");
+//					break;
+//
+//				case 3:
+//					prMenu_1();
+//					break;
+//
+//				}
+//
+//	} while (jOpcion != 3);
 }
-void prMenu_2(){
+
+
+int prMenu_2(){
 int jOpcion;
 
-do {
 	printf("\n   1. Hoteles Disponibles");
 	fflush(stdin);
 	fflush(stdout);
@@ -77,40 +79,40 @@ do {
 	fflush(stdout);
 
 	scanf("%d", &jOpcion); /* Recoge la informacion marcada por el usuario*/
+	return jOpcion;
 
-			/* switch para hacer la funcion requerida por el usuario*/
-
-			switch (jOpcion) {
-			case 1:
-				/*IMPORTAR EL .CSV HOTELESN QUE ESTA EN LA CARPETA DEL DRIVE  Y MOSTRARLO COMO UNA LISTA DONDE SE PUEDE SELECCIONAR EL HOTEL*/
-				/*Llamar a la funcion de ¿que desea hacer?*/
-				printf("≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠\n");
-				printf("          HOTELES DISPONIBLES\n");
-				printf("≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠\n");
-
-				//logggerN("[INFO", "ABRIENDO FICHERO");
-
-
-				imprimirHotelesCSV("HotelesN.csv");
-				break;
-
-			case 2:
-				printf("");
-				break;
-
-			case 3:
-				prMenu_1();
-				break;
-
-			}
-
-} while (jOpcion != 3);
+//			/* switch para hacer la funcion requerida por el usuario*/
+//
+//			switch (jOpcion) {
+//			case 1:
+//				/*IMPORTAR EL .CSV HOTELESN QUE ESTA EN LA CARPETA DEL DRIVE  Y MOSTRARLO COMO UNA LISTA DONDE SE PUEDE SELECCIONAR EL HOTEL*/
+//				/*Llamar a la funcion de ¿que desea hacer?*/
+//				printf("≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠\n");
+//				printf("          HOTELES DISPONIBLES\n");
+//				printf("≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠\n");
+//
+//				//logggerN("[INFO", "ABRIENDO FICHERO");
+//
+//
+//				imprimirHotelesCSV("HotelesN.csv");
+//				break;
+//
+//			case 2:
+//				printf("");
+//				break;
+//
+//			case 3:
+//				prMenu_1();
+//				break;
+//
+//			}
+//
+//} while (jOpcion != 3);
+//}
 }
 int prMenu_1() {
 
 	int iOpcion;
-
-	do {
 
 		printf(
 				AMARILLO_COLOR "\n============================================================================" COLOR_RESET "\n");
@@ -140,25 +142,7 @@ int prMenu_1() {
 		scanf("%d", &iOpcion); /* Recoge la informacion marcada por el usuario*/
 
 		/* switch para hacer la funcion requerida por el usuario*/
+		return iOpcion;
+	}
 
-		switch (iOpcion) {
-		case 1:
-			printf("");
-			break;
 
-		case 2:
-			printf("");
-			break;
-
-		case 3:
-			printf("\n¡Hasta pronto!");
-
-		}
-
-		/*  */
-
-	} while (iOpcion != 3);
-
-	return 0;
-
-}
