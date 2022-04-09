@@ -1,4 +1,4 @@
-#include "bbdd.h"
+#include "bbddCliente.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -6,32 +6,12 @@ void crearTablas(sqlite3 *db){
 	sqlite3_stmt *stmt;
 
 	char sql[] = "Create table cliente(nombre varchar2(20), DNI int, eMail varchar2(25), anoDeNacimiento int, contraseña varchar2(8))";
-	int result = sqlite3_prepare_v2(db,sql,-1,&stmt,NULL);
-	if(result != SQLITE_OK){
-		printf("Error preparing statement (SELECT)\n");
-		printf("%s\n", sqlite3_ermsg(db));
-		return result;
 
-	}
+	sqlite3_prepare_v2(db,sql,-1,&stmt,NULL);
 
-	printf("SQL query prepared (SELECT)\n");
-	result = */sqlite3_step(stmt); //Ejecuta la sentencia
-		if (result != SQLITE_DONE) {
-			printf("Error creating table\n");
-			printf("%s\n", sqlite3_errmsg(db));
-			return result;
-		}
-		result = */sqlite3_finalize(stmt);
-		if (result != SQLITE_OK) {
-			printf("Error finalizing statement (DELETE)\n");
-			printf("%s\n", sqlite3_errmsg(db));
-			return result;
+	sqlite3_step(stmt); //Ejecuta la sentencia
 
-		}
-
-		printf("Prepared statement finalized (DELETE)\n");
-
-		return SQLITE_OK;
+	sqlite3_finalize(stmt);//Finaliza la sentencia
 
 }
 //Añadimos todos los datos del cliente
