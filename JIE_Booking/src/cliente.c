@@ -14,7 +14,7 @@ void pedirCliente (tCliente * cl){
 		printf("Nombre de usuario: ");
 		fflush(stdout);
 		fflush(stdin);
-		gets(cl->nombreUsu);
+		gets(cl->nombre);
 		printf("DNI: ");
 		fflush(stdout);
 		fflush(stdin);
