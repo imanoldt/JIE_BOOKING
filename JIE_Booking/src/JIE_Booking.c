@@ -25,6 +25,10 @@ int main() {
 	char opcion,opcion2,opcion3,opcion4;
 
 	tCliente c;
+	//tChekIn*
+	tChekinIn** ListaReserva = NULL;
+	int tamanyoList = 0;
+
 
 	int result = sqlite3_open("cliente.db", &db);
 	if (result != SQLITE_OK) {
