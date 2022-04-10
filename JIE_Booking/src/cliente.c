@@ -57,6 +57,19 @@ tCliente pedirCliente(){
 		gets(cl.contrasena);
 		return cl;
 }
+tCliente pedirClienteIS(){
+    tCliente t;
+    printf("Introduce tu nombre de usuario: \n");
+    fflush(stdout);
+    fflush(stdin);
+    scanf("s",&t.nombre);
+    printf("Introduce contraseña: \n");
+    fflush(stdout);
+    fflush(stdin);
+    scanf("s",&t.contrasena);
+
+    return t;
+}
 
 void imprimirCliente(tCliente cl){
 	printf("%s %s %s %d %s\n", cl.nombre, cl.dni, cl.eMail, cl.anoDeNacimiento, cl.contrasena);

@@ -40,6 +40,7 @@ int main() {
 			opcion = prMenu_1();
 			switch(opcion){
 				case 1:
+                    c=pedirClienteIS();
 						break;
 				case 2: c = pedirCliente();
 						insertarPersona(db, c.nombre, c.dni, c.eMail, c.anoDeNacimiento,c.contrasena);

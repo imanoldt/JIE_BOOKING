@@ -19,6 +19,7 @@ typedef struct{
 
 //void pedirCliente (tCliente * cl);
 tCliente pedirCliente();
+tCliente pedirClienteIS();
 void imprimirCliente (tCliente cl);
 
 #endif /* CLIENTE_H_ */
