@@ -12,7 +12,7 @@
 #include "checkin.h"
 
 
-void AnadirReserva(tCheckIn*** ListReserva, int* tamanyoLista, tCheckIn* ReservaAAnadir){
+void AnadirReserva(tCheckIn** ListReserva, int* tamanyoLista, tCheckIn* ReservaAAnadir){
 
 	(*tamanyoLista)++;
 

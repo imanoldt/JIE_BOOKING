@@ -25,7 +25,7 @@ int main() {
 	char opcion,opcion2,opcion3,opcion4;
 
 	tCliente c;
-	//tChekIn*
+
 	tChekinIn** ListaReserva = NULL;
 	int tamanyoList = 0;
 
