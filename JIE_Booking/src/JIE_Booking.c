@@ -15,60 +15,56 @@
 #include  "cliente.h"
 #include "listaCliente.h"
 #include  "log.h"
+#include "checkin.h"
 
 
 
 
 int main() {
-
 	sqlite3 *db;
-	char opcion,opcion2,opcion3,opcion4;
+		char opcion,opcion2,opcion3,opcion4;
 
-	tCliente c;
+		tCliente c;
 
-	tChekinIn** ListaReserva = NULL;
-	int tamanyoList = 0;
+		int result = sqlite3_open("cliente.db", &db);
+		if (result != SQLITE_OK) {
+			loggerN("[ERROR]","DATABASE CAN NOT BE OPENED\n");
+			return result;
+		}
 
+		loggerN("[INFO]","DATABASE OPENED\n") ;
+		crearTablas(db);
+		loggerN("[INFO]","DATABASE CREATED\n") ;
 
-	int result = sqlite3_open("cliente.db", &db);
-	if (result != SQLITE_OK) {
-		loggerN("[ERROR]","DATABASE CAN NOT BE OPENED\n");
-		return result;
-	}
+		do{
+				opcion = prMenu_1();
+				switch(opcion){
+					case 1: c=pedirClienteIS();
+							break;
+					case 2: c = pedirCliente();
+							insertarPersona(db, c.nombre, c.dni, c.eMail, c.anoDeNacimiento,c.contrasena,0);
+							printf("Persona registrada con exito!!");
+							opcion = prMenu_1();
+							do{
+								opcion2= prMenu_2();
+								switch(opcion2){
+									case 1:
+										break;
+									case 2:
+										break;
 
-	loggerN("[INFO]","DATABASE OPENED\n") ;
-	crearTablas(db);
-	loggerN("[INFO]","DATABASE CREATED\n") ;
+								}
 
-	do{
-			opcion = prMenu_1();
-			switch(opcion){
-				case 1:
-                    c=pedirClienteIS();
-						break;
-				case 2: c = pedirCliente();
-						insertarPersona(db, c.nombre, c.dni, c.eMail, c.anoDeNacimiento,c.contrasena);
-						printf("Persona registrada con exito!!");
-						do{
-							opcion2= prMenu_2();
-							switch(opcion2){
-								case 1:
-									break;
-								case 2:
-									break;
+							}while(opcion=='0');
+							return EXIT_SUCCESS;
 
-							}
-
-						}while(opcion=='0');
-						return EXIT_SUCCESS;
-
-//				case 3: mostrarPersonas(db); break;
-//				case 0: printf("Saliendo del men�..."); fflush(stdin);break;
-				default: printf("ERROR! La opci�n seleccionada no es correcta");loggerN("[TYPE]","TYPE OF OPCION NOT COMPATIBLE");fflush(stdin);
-			}
-		}while(opcion=='0');
-		return EXIT_SUCCESS;
-	}
+	//				case 3: mostrarPersonas(db); break;
+	//				case 0: printf("Saliendo del men�..."); fflush(stdin);break;
+					default: printf("ERROR! La opci�n seleccionada no es correcta");loggerN("[TYPE]","TYPE OF OPCION NOT COMPATIBLE");fflush(stdin);
+				}
+			}while(opcion=='0');
+			return EXIT_SUCCESS;
+}
 
 
 

@@ -14,6 +14,8 @@ typedef struct{
 	char eMail [25];
 	int anoDeNacimiento;
 	char contrasena[20];
+	int numHabitacion;
+
 
 } tCliente;
 

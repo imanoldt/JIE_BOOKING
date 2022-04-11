@@ -21,7 +21,7 @@ typedef struct{
 	int checkOut;
 } tCheckIn;
 
-void AnadirReserva(tCheckIn*** ListReserva, int* tamanyoLista, tCheckIn* ReservaAAnadir);
+void AnadirReserva(tCheckIn** ListReserva, int* tamanyoLista, tCheckIn* ReservaAAnadir);
 void ReservaInicial (tCheckIn** ReservaNueva, tHotel* HabitacionLibre, tCliente* ReservaCliente);
 void AsignarNumPerHab (tCheckIn** ReservaNueva);
 void LiberarReserva(tCheckIn*** LiberarListaReserva, int* tamanyoLista);
